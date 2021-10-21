@@ -1,3 +1,6 @@
+<div class="container" *ngIf="comparisonProducts.length > 0">
+  <app-comparison [products]="comparisonProducts"></app-comparison>
+</div>
 <div class="container">
   <div class="row">
     <div class="col-lg-12 my-3">
@@ -32,6 +35,10 @@
             </div>
           </div>
           <span style="color: red;" *ngIf="product.quantity <= fewItemsLeftThreshold">Hurry, few items left</span>
+          <div>
+            <button class="btn btn-primary" style="width: 100%;" (click)="addCompareProductList(product)"
+              [disabled]="product.quantity === 0" [disabled]="comparisonProducts.length>=3">Compare</button>
+          </div>
         </div>
       </div>
     </div>

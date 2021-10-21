@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
   public isListView = false;
   public products: IProduct[] = [];
   public cart: ICart;
+  public comparisonProducts: IProduct[] = [];
   constructor(private appService: AppService) { }
 
   ngOnInit(): void {
@@ -38,6 +39,10 @@ export class AppComponent implements OnInit {
       this.decreaseProductQuantity(product);
       this.appService.updateCart(this.cart).subscribe();
     }
+  }
+
+  public addCompareProductList(product: IProduct) {
+    this.comparisonProducts.push(product);
   }
 
   public removeFromCart(product: IProduct) {
