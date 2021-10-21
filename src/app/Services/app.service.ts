@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { ICart, IProduct } from '../models/model';
 
-const api_products = 'http://localhost:3000/products';
-const api_cart = 'http://localhost:3000/cart';
+const api_products = `${environment.apiUrl}/products`;
+const api_cart = `${environment.apiUrl}/cart`;
 
 @Injectable({
   providedIn: 'root'

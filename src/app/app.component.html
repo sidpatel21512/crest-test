@@ -3,11 +3,11 @@
     <div class="col-lg-12 my-3">
       <div class="pull-right">
         <div class="btn-group">
-          <button class="btn btn-info" (click)="this.isListView = true;">
-            List View
-          </button>
           <button class="btn btn-danger" (click)="this.isListView = false;">
             Grid View
+          </button>
+          <button class="btn btn-info" (click)="this.isListView = true;">
+            List View
           </button>
         </div>
       </div>
@@ -39,7 +39,7 @@
   <div class="row" *ngIf="limitedPurchaseWarningProduct">Purchase limit is exceeds for {{limitedPurchaseWarningProduct}}
   </div>
 </div>
-<div class="container">
+<div class="container" *ngIf="cart">
   <div class="row">
     <div class="col-lg-12 my-3">
       <div class="pull-right">
